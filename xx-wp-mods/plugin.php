@@ -3,7 +3,7 @@
  * Plugin Name: xx-wp-mods
  * Description: Reusable WordPress modifications loaded from the removables folder.
  * Version: 0.1.0
- * Author: xx
+ * Author: Peter Nanayon
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
