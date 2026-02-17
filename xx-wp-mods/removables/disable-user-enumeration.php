@@ -1,15 +1,12 @@
 <?php
 /**
- * Block user enumeration patterns.
+ * Disable user enumeration via REST API and author archives.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-/**
- * Block user endpoints in REST API.
- */
 add_filter(
     'rest_endpoints',
     function ( $endpoints ) {
@@ -25,9 +22,6 @@ add_filter(
     }
 );
 
-/**
- * Redirect author archives to home.
- */
 add_action(
     'template_redirect',
     function () {
@@ -35,15 +29,5 @@ add_action(
             wp_redirect( home_url(), 301 );
             exit;
         }
-    }
-);
-
-/**
- * Avoid account discovery via lost password message differences.
- */
-add_filter(
-    'lostpassword_errors',
-    function () {
-        return 'If the account exists, a password reset email has been sent.';
     }
 );
